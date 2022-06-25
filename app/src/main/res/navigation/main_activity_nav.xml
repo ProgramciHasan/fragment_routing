@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/anasayfa_fragment">
+
+    <fragment
+        android:id="@+id/anasayfa_fragment"
+        android:name="com.programcihasan.navigation_component.anasayfa_fragment"
+        android:label="fragment_anasayfa_fragment"
+        tools:layout="@layout/fragment_anasayfa_fragment" >
+        <action
+            android:id="@+id/oyun_ekranina_gecis"
+            app:destination="@id/oyun_ekrani" />
+        <action android:id="@+id/action_anasayfa_fragment_to_oyun_ekrani" app:destination="@id/oyun_ekrani"/>
+    </fragment>
+    <fragment
+        android:id="@+id/oyun_ekrani"
+        android:name="com.programcihasan.navigation_component.oyun_ekrani"
+        android:label="fragment_oyun_ekrani"
+        tools:layout="@layout/fragment_oyun_ekrani" >
+        <action
+            android:id="@+id/action_oyun_ekrani_to_sonuc_ekrani"
+            app:destination="@id/sonuc_ekrani" />
+        <action
+            android:id="@+id/sonuc_ekranina_gecis"
+            app:destination="@id/sonuc_ekrani" />
+        <action android:id="@+id/action_oyun_ekrani_to_sonuc_ekrani2" app:destination="@id/sonuc_ekrani"/>
+    </fragment>
+    <fragment
+        android:id="@+id/sonuc_ekrani"
+        android:name="com.programcihasan.navigation_component.sonuc_ekrani"
+        android:label="fragment_sonuc_ekrani"
+        tools:layout="@layout/fragment_sonuc_ekrani" >
+        <action
+            android:id="@+id/action_sonuc_ekrani_self"
+            app:destination="@id/sonuc_ekrani" />
+    </fragment>
+</navigation>
